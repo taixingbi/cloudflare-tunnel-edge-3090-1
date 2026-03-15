@@ -1,0 +1,10 @@
+tunnel: edge-3090-1
+credentials-file: /home/hunter/.cloudflared/15b45c54-1f94-4abc-b775-fd8b8b6871be.json
+
+# Tunnel only: hostname -> backend directly
+ingress:
+  - hostname: inference.taixingai.com
+    service: http://localhost:8000
+  - hostname: embedding.taixingai.com
+    service: http://localhost:8001
+  - service: http_status:404
